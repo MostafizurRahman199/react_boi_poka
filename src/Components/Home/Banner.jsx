@@ -8,7 +8,7 @@ export default function Banner() {
       src='banner.png'
       className="max-w-sm " />
     <div>
-      <h1 className="text-7xl font-bold"> Books to freshen up your bookshelf</h1>
+      <h1 className="text-2xl md:text-5xl lg:text-7xl font-bold"> Books to freshen up your bookshelf</h1>
       <p className="py-6 text-xl">
       Revitalize your reading space with a curated selection of books that inspire,  educate, and captivate!
       </p>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 export default function BookCard({book}) {
 
@@ -7,18 +8,21 @@ const {bookId, bookName, author, image, review, totalPages, rating, category, ta
 
 
   return (
-    <div className="max-w-xs p-4 bg-white shadow-md rounded-lg hover:shadow-lg transition-shadow duration-200">
+   <Link to={`/bookdetails/${bookId}`} >
+         <div className="w-80 md:max-w-xl p-4 bg-white shadow-md rounded-lg hover:shadow-lg  duration-300 cursor-pointer transition-all transform hover:scale-105">
     <div className="relative pb-56 overflow-hidden rounded-lg bg-gray-100">
       <img
         src={image} // replace with actual book image URL
         alt="The Dating Playbook for Men"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-contain lg:p-4"
       />
     </div>
     <div className="mt-4">
       <div className="flex gap-2 mb-2">
-        <span className="px-2 py-1 text-xs font-semibold text-green-700 bg-green-100 rounded">Young Adult</span>
-        <span className="px-2 py-1 text-xs font-semibold text-green-700 bg-green-100 rounded">Identity</span>
+       {
+        tags.map((tag, index) =>  <span key={index} className="px-2 py-1 text-xs font-semibold text-green-700 bg-green-100 rounded">{tag}</span>)
+       }
+        
       </div>
       <h2 className="text-lg font-bold text-gray-800">{bookName}</h2>
       <p className="text-sm text-gray-500">By: {author}</p>
@@ -40,5 +44,6 @@ const {bookId, bookName, author, image, review, totalPages, rating, category, ta
      </div>
     </div>
   </div>
+   </Link>
   )
 }

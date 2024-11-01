@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function Footer() {
   return (
-   <div>
-    <footer className="footer bg-base-200 text-base-content p-10">
+   
+    <footer className="footer bg-base-200 text-base-content p-10 border-2 border-red-500 w-full">
   <nav>
     <h6 className="footer-title">Services</h6>
     <a className="link link-hover">Branding</a>
@@ -40,6 +40,6 @@ export default function Footer() {
     </fieldset>
   </form>
 </footer>
-   </div>
+
   )
 }

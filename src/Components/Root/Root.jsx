@@ -7,7 +7,8 @@ import MyProvider from "../../utils/MyProvider";
 export default function Root() {
   const navigation = useNavigation();
   return (
-    <MyProvider>
+   <div className="border-2 border-blue-500 w-full">
+     <MyProvider >
       <Navbar />
       {navigation.state === 'loading' ? (
         <p>Loading...</p>
@@ -17,5 +18,6 @@ export default function Root() {
       )}
       <Footer />
     </MyProvider>
+   </div>
   );
 }

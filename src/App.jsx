@@ -10,7 +10,7 @@ function App() {
 
   return (
 
-      <div className="w-10/12 mx-auto">
+      <div className="w-full">
         <Root />
       </div>
  
