@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { MyContext } from "../../utils/MyProvider";
 
 export default function BookDetails() {
-  const { books } = useContext(MyContext);
+  const { books, handleReadList , handleWishList} = useContext(MyContext);
   const { id } = useParams();
   const book = books.find((book) => book.bookId == id);
 
@@ -70,10 +70,10 @@ const style = {
                 <strong>Rating:</strong> {rating} / 5
               </p>
               <div className="flex justify-center md:justify-start mt-6 space-x-3">
-        <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition-all duration-300">
+        <button onClick={()=>handleReadList(bookId)} className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition-all duration-300">
           Read
         </button>
-        <button className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2 px-6 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-opacity-75 transition-all duration-300">
+        <button onClick={()=>handleWishList(bookId)} className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2 px-6 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-opacity-75 transition-all duration-300">
           Wishlist
         </button>
       </div>

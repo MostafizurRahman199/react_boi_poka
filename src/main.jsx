@@ -11,6 +11,7 @@ import Home from './Components/Home/Home.jsx';
 import Dashboard from './Components/Dashboard/Dashboard.jsx';
 import ErrorElemnet from './Components/ErrorElement/ErrorElemnet.jsx';
 import BookDetails from './Components/Home/BookDetails.jsx';
+import ListedBook from './Components/ListedBook/ListedBook.jsx';
 
 
 const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
     {
       path:'/bookdetails/:id',
       element:<BookDetails></BookDetails>
+    },
+    {
+      path:"/listedbook",
+      element:<ListedBook></ListedBook>
     }
    ],
    errorElement:<ErrorElemnet/>

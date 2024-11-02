@@ -7,7 +7,7 @@ const links = <>
 
 <li><NavLink to="/home">Home</NavLink></li>
 
-<li><a>Listed Books</a></li>
+<li><NavLink to={'/listedbook'}>Listed Books</NavLink></li>
 <li><a>Pages to Read</a></li>
 
 </>
@@ -40,7 +40,7 @@ const links = <>
       <a className="btn btn-ghost text-xl">Boi Poka</a>
     </div>
     <div className="navbar-center hidden lg:flex">
-      <ul className="menu menu-horizontal px-1">
+      <ul className="menu menu-horizontal px-1 md:space-x-4">
         {links}
       </ul>
     </div>
