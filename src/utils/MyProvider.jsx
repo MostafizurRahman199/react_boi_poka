@@ -30,6 +30,25 @@ const getStoreWishList = ()=>{
 
 
 
+const handleSort  = (sortType, readList , setReadList)=>{
+  // sort readList based on sortType
+ 
+    if(sortType === 'No of pages'){
+          const sortList = [...readList].sort((a,b)=>a.totalPages -  b.totalPages);
+          setReadList(sortList);
+    }
+    if(sortType === 'Publish year'){
+      const sortList = [...readList].sort((a,b)=>a.yearOfPublishing -  b.yearOfPublishing);
+      setReadList(sortList);
+    }
+    if(sortType === "Ratings"){
+      const sortList = [...readList].sort((a,b)=>a.rating -  b.rating);
+      setReadList(sortList);
+    }
+
+}
+
+
 
 
 
@@ -86,5 +105,5 @@ const getStoreWishList = ()=>{
       .then((data) => setBooks(data));
   }, []);
 
-  return <MyContext.Provider value={{ books, handleReadList, handleWishList, getStoreWishList, getStoreReadList, readList, wishList }}>{children}</MyContext.Provider>;
+  return <MyContext.Provider value={{ books, handleReadList, handleWishList, getStoreWishList, getStoreReadList, readList, wishList , handleSort}}>{children}</MyContext.Provider>;
 }

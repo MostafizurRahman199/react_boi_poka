@@ -5,7 +5,7 @@ export default function Navbar() {
 
 const links = <>
 
-<li><NavLink to="/home">Home</NavLink></li>
+<li><NavLink to="/">Home</NavLink></li>
 
 <li><NavLink to={'/listedbook'}>Listed Books</NavLink></li>
 <li><NavLink to={'/pagetoread'}>Pages to Read</NavLink></li>
@@ -37,7 +37,7 @@ const links = <>
           {links}
         </ul>
       </div>
-      <Link  to={'/home'} className="btn btn-ghost text-xl">Boi Poka</Link>
+      <Link  to={'/'} className="btn btn-ghost text-xl">Boi Poka</Link>
     </div>
     <div className="navbar-center hidden lg:flex">
       <ul className="menu menu-horizontal px-1 md:space-x-4">
