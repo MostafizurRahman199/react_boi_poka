@@ -12,6 +12,9 @@ import Dashboard from './Components/Dashboard/Dashboard.jsx';
 import ErrorElemnet from './Components/ErrorElement/ErrorElemnet.jsx';
 import BookDetails from './Components/Home/BookDetails.jsx';
 import ListedBook from './Components/ListedBook/ListedBook.jsx';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import PageToRead from './Components/PageToRead/PageToRead.jsx';
 
 
 const router = createBrowserRouter([
@@ -35,6 +38,10 @@ const router = createBrowserRouter([
       path:"/listedbook",
       element:<ListedBook></ListedBook>
     }
+    ,{
+      path:"/pagetoread",
+      element:<PageToRead></PageToRead>
+    }
    ],
    errorElement:<ErrorElemnet/>
   },
@@ -44,6 +51,7 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
      <RouterProvider router={router} />
+  <ToastContainer />
   </StrictMode>,
 )
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 export default function Navbar() {
 
@@ -8,7 +8,7 @@ const links = <>
 <li><NavLink to="/home">Home</NavLink></li>
 
 <li><NavLink to={'/listedbook'}>Listed Books</NavLink></li>
-<li><a>Pages to Read</a></li>
+<li><NavLink to={'/pagetoread'}>Pages to Read</NavLink></li>
 
 </>
 
@@ -37,15 +37,16 @@ const links = <>
           {links}
         </ul>
       </div>
-      <a className="btn btn-ghost text-xl">Boi Poka</a>
+      <Link  to={'/home'} className="btn btn-ghost text-xl">Boi Poka</Link>
     </div>
     <div className="navbar-center hidden lg:flex">
       <ul className="menu menu-horizontal px-1 md:space-x-4">
         {links}
       </ul>
     </div>
-    <div className="navbar-end">
-      <a className="btn">Profile</a>
+    <div className="navbar-end gap-2 hidden md:flex">
+      <a className="btn bg-green-400 hover:bg-green-500 text-white">Sign in</a>
+      <a className="btn bg-blue-400 hover:bg-blue-500 text-white">Sign up</a>
     </div>
   </div>
   )

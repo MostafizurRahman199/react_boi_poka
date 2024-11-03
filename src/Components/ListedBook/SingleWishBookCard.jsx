@@ -1,16 +1,16 @@
+
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 
-export default function SingleReadBookCard({book}) {
+export default function SingleWishBookCard({book}) {
     const navigate = useNavigate();
     const {bookId, bookName, author, image, review, totalPages, rating, category, tags, publisher, yearOfPublishing
     } = book;
 
+    
 const viewsDetails = ()=>{
     navigate(`/bookdetails/${bookId}`)
 }
-
-
   return (
    
     <div className="hero-content flex-col lg:flex-row justify-between shadow-lg rounded-2xl">
@@ -52,3 +52,6 @@ const viewsDetails = ()=>{
 
   )
 }
+
+
+

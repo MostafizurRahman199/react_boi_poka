@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 
 import React from "react";
+import { toast } from "react-toastify";
 
 export const MyContext = createContext();
 
@@ -38,7 +39,10 @@ const getStoreWishList = ()=>{
 
       const  check = LocalStoreReadList.find((item)=>item.bookId ==  bookId);
 
-      if(!check){
+      
+      if(check){
+        toast.error("This Book have already in ReadList", { position: "top-right" })
+      }else{
 
        const readBook = books.find((book)=>book.bookId == bookId);
   
@@ -47,6 +51,7 @@ const getStoreWishList = ()=>{
 
        const readListString = JSON.stringify(newReadList);
        localStorage.setItem("read-list", readListString);
+       toast.success("This book added to readlist", { position: "top-right" });
        
       }
     
@@ -61,14 +66,16 @@ const getStoreWishList = ()=>{
       
       const  check = LocalStoreWishList.find((item)=>item.bookId ==  bookId);
 
-      if(!check){
+      if(check){
+        toast.error("This Book have already in wishList " , { position: "top-right" })
+      }else{
        const wishBook = books.find((book)=>book.bookId == bookId);
        const newWishList = [...wishList, wishBook];
        setWishList(newWishList);
 
        const wishListString = JSON.stringify(newWishList);
        localStorage.setItem("wish-list", wishListString);
-
+        toast.success("This Book added to wishList", { position: "top-right" });
       }
     
   }
